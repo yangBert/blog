@@ -1,21 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Todo from '@/components/Todo'
-import Life from '@/components/Life'
+import JavaScript from '@/components/JavaScript'
+import Golang from '@/components/Golang'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/todo',
-      name: 'Todo',
-      component: Todo
+      path: '/',
+      redirect: '/JavaScript'
     },
     {
-      path: '/life',
-      name: 'Life',
-      component: Life
+      path: '/JavaScript',
+      name: 'JavaScript',
+      component: JavaScript
+    },
+    {
+      path: '/Golang',
+      name: 'Golang',
+      component: Golang
     }
   ]
 })

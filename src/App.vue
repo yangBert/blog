@@ -2,8 +2,9 @@
   <div id="app">
     <h1>路由</h1>
     <ul>
-      <li><router-link to="/todo">TodoList</router-link></li>
-      <li><router-link to="/life">lifeCycle</router-link></li>
+      <li v-for="item in links" :key="item.id">
+        <router-link :to="item.path">{{item.title}}</router-link>
+      </li>
     </ul>
     <router-view/>
   </div>
@@ -11,7 +12,36 @@
 
 <script>
 export default {
-  name: 'App'
+
+  name: 'App',
+    data () {
+      return {
+        msg: '',
+        links: []
+      }
+  },
+
+  methods: {
+
+    initMenu: function () {
+      const vm = this;
+     this.$axios.get('api/list.json')
+     .then(function (res) {
+        console.log(res);
+        vm.links = res.data.menus;
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      }); 
+    }
+
+  },
+  mounted: function () {
+    this.initMenu()
+  }
 }
 </script>
 
