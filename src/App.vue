@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <h1>路由</h1>
+    <ul>
+      <li><router-link to="/todo">TodoList</router-link></li>
+      <li><router-link to="/life">lifeCycle</router-link></li>
+    </ul>
     <router-view/>
   </div>
 </template>
@@ -14,10 +18,5 @@ export default {
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
