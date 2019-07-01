@@ -1,0 +1,14 @@
+{
+  "menus": [
+    {
+      "id": 0,
+      "title": "JavaScript",
+      "path": "/JavaScript"
+    },
+    {
+      "id": 1,
+      "title": "Golang",
+      "path": "/Golang"
+    }
+  ]
+}
