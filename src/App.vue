@@ -25,7 +25,7 @@ export default {
 
     initMenu: function () {
       const vm = this;
-     this.$axios.get('api/list.json')
+     this.$axios.get('static/mock/list.json')
      .then(function (res) {
         console.log(res);
         vm.links = res.data.menus;
